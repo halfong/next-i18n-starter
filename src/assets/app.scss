@@ -1,0 +1,190 @@
+// defined your theme variables
+$theme: (
+  radius : 16px,
+  container-max-width: 1120px,
+  container-padding-x: 6vw,
+  colors: ( primary:#e7ff00, blue: #1188EE, black: #111315, ink: #1A1D1F, gray: #2C3132, gray-light: #5E6670, silver: #5E6670, white: #fff7d9, yellow: #e7ff00, red: #ff3333 ),
+  texts: (
+    1: 38px,
+    2: 28px,
+    3: 24px,
+    4: 18px,
+    5: 16px,
+    6: 14px,
+    7: 12px,
+  ),
+  sizes:  (
+    16: 16px,
+    24: 24px,
+    28: 28px,
+    32: 32px,
+    36: 36px,
+    48: 48px,
+    54: 54px,
+    64: 64px,
+    84: 84px,
+    160: 160px,
+  ),
+  spacings: ( 0: 0, 2: 2px, 5: 5px, 10: 10px, 15: 15px, 20: 20px, 30: 30px, 50: 50px, 100:100px ),
+);
+
+// use the kit
+@use 'bruss/bruss' with ( $theme : $theme );
+@import '../assets/iconfont.css';
+
+// custome styles
+*{
+  font-family: sans-serif;
+}
+
+html,body{
+  font-family: Arial, Helvetica, sans-serif;
+  @extend .bg-black, .t-4;
+  * { @extend .white; }
+}
+
+a:hover{
+  border-color: #e7ff00!important;
+}
+h1,h2,h3,h4{
+  font-weight: normal;
+}
+
+.hover-box{
+  .hover-show{ display: none; }
+  &:hover{
+    .hover-show{ display: block; }  
+  }
+}
+.hover-bg-lighten{
+  &:hover{
+    background: #ffffff20;
+  }
+}
+
+.icon {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-black-blur{
+  backdrop-filter: blur(5px);
+  background: #111315cc
+}
+
+.tapable{ cursor: pointer; }
+.tapable:active{ opacity: .6!important; }
+
+.bg-shadow-b{
+  background: linear-gradient(rgba(27,27,27, 0), rgba(27,27,27, 1) 50%);
+}
+.bg-shadow-t{
+  background: linear-gradient(180deg, rgba(27,27,27, 1) 10%, rgba(27,27,27, 0) 100%);
+}
+
+
+.markdown{
+  max-width: 760px;
+  padding-bottom: 100px;
+  h1{ @extend .t-1, .center, .bold, .my-100; }
+  h2,h3{ @extend .t-3, .left, .bold, .pt-20, .mb-20, .primary, .mt-50; }
+  p { @extend .t-4, .mb-20; letter-spacing: 0.01em; }
+  hr{
+    margin: 50px 0;
+    border: none; height: 1px; background: rgba(255, 255, 255, .1);
+  }
+  a{ @extend .primary, .underline, .px-5; }
+  blockquote{
+    margin-block: 0; margin-inline: 0; padding-left: .6em; border-left: 2px #e7ff00 solid;
+    p{ @extend .t-5, .bold; }
+  }
+  li{
+    list-style: decimal-leading-zero;
+  }
+}
+
+/**
+ * Animation Effects
+ */
+ .ani-fadeup{
+  opacity: 0;
+  transform: translateY(2vh);
+  transition: all cubic-bezier(0.68,-0.55,0.27,1.55) 400ms;
+  &.visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.ani-fadeup-slow{
+  opacity: 0;
+  transform: translateY(2vh);
+  transition: all cubic-bezier(0.68,-0.55,0.27,1.55) 800ms;
+  &.visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+//should define transform: translateX(0) in dom.style
+.ani-slideX{
+  transition: all cubic-bezier(0.155, 0.675, 0.275, 0.975) 300ms;
+  &.visible{
+    transform: translateX(0)!important;
+  }
+}
+
+.ani-fadein{
+  opacity: 0;
+  transition: opacity ease-in 500ms;
+  &.visible{
+    opacity: 1;
+  }
+}
+
+.ani-fadein-slow{
+  opacity: 0;
+  transition: opacity ease-in 1000ms;
+  &.visible{
+    opacity: 1;
+  }
+}
+
+.ani-popin{
+  transform: translateY(10vh) scale(1.2) rotate(10deg);
+  opacity: 0;
+  transition: all cubic-bezier(0.68,-0.55,0.27,1.55) 300ms;
+  &.visible{
+    transform: translateY(0) scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+.ani-popin-slow{
+  transform: translateY(10vh) scale(1.2) rotate(720deg);
+  opacity: 0;
+  transition: all cubic-bezier(0.68,-0.55,0.27,1.55) 1s;
+  &.visible{
+    transform: translateY(0) scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+ul,ol{
+  li{
+    list-style: none;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .hide-desktop {
+    display: none;
+  }
+}

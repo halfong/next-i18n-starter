@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /sitemap.xml
+Disallow: /_next
+Allow: /
+Sitemap: https://holli.cc/sitemap.xml
