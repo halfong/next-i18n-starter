@@ -29,7 +29,7 @@ $theme: (
 );
 
 // use the kit
-@use 'bruss/bruss' with ( $theme : $theme );
+@use 'bruss' with ( $theme : $theme );
 @import '../assets/iconfont.css';
 
 // custome styles

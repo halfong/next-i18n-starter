@@ -1,5 +1,3 @@
-import Topnav from "@/components/topnav";
-import Footer from "@/components/footer";
 import "@/assets/app.scss";
 import { lang_site } from "@/core/i18n";
 
@@ -13,9 +11,7 @@ export default function LayoutLang({ children, params }){
   return (
     <html lang={ params.lang }>
       <body>
-        <Topnav lang={ params.lang } />
         { children }
-        <Footer lang={ params.lang }/>
       </body>
     </html>
   );

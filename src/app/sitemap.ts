@@ -5,7 +5,7 @@ import { generateStaticParams as genContentPages } from './[lang]/[type]/[slug]/
 
 type PageInfo = { path: string, priority: number, changeFrequency?: "weekly" | "yearly" | "always" | "hourly" | "daily" | "monthly" | "never" | undefined, mutilingo?: Function }
 
-const root = 'https://holli.cc'
+const root = process.env.DOMAIN
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
