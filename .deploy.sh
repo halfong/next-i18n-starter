@@ -5,8 +5,8 @@ localFolder="./out"
 
 # 定义远程服务器信息
 remoteUser="ubuntu"
-remoteHost="124.221.27.143"
-remoteFolder="/var/www/holli/next"
+remoteHost="xxx.xxx.xxx.xxx"
+remoteFolder="/path/to/dist"
 
 # 使用rsync命令通过SSH上传文件夹
 npm run build
